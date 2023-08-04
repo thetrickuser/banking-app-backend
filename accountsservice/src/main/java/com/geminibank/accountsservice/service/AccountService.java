@@ -31,10 +31,14 @@ public class AccountService {
 		Double availableBalance = null;
 		try {
 			Account response = repository.findByAccountNumber(accountNumber);
+			log.info("{}", response.toString());
 			availableBalance = response.getAvailableBalance();
+			log.info("{}", availableBalance);
 		} catch(Exception e) {
 			log.error("Error in fetching availableBalance. {}", e.getMessage());
 		}
+		
+		log.info("{}", availableBalance);
 		
 		return availableBalance;
 	}

@@ -19,7 +19,7 @@ public class Customer {
 	@Column(nullable = false)
 	private String name;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false, unique = true, length = 10)
 	private String phoneNumber;
 	
 	@Column
