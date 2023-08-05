@@ -17,6 +17,9 @@ public class GatewayConfig {
 				.route("profileservice", r -> r
 						.path("/profile/**")
 						.uri("lb://PROFILESERVICE"))
+				.route("authservice", r -> r
+						.path("/auth/**")
+						.uri("lb://AUTHSERVICE"))				
 				.build();
 						
 	}

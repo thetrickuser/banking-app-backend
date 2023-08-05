@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "accountServiceUrl",
+    "type": "java.lang.String",
+    "description": "url for creating new account"
+  },
+  {
+    "name": "profileServiceUrl",
+    "type": "java.lang.String",
+    "description": "url for creating new customer profile"
+  }
+]}

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: authservice
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: password
+    url: jdbc:mysql://localhost/geminibank?createDatabaseIfNotExist=true
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    
+server:
+  port: 9191
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka
+  instance:
+    prefer-ip-address: true
+  
+  
+accountServiceUrl: http://localhost:8090/account/createAccount
+profileServiceUrl: http://localhost:8090/profile/createCustomerProfile
