@@ -1,5 +1,7 @@
 package com.geminibank.accountsservice.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,10 @@ public class AccountService {
 		log.info("{}", availableBalance);
 		
 		return availableBalance;
+	}
+
+	public List<Account> fetchAllAccounts(Long customerId, String token) {
+		return repository.findByCustomerId(customerId);		
 	}
 
 }

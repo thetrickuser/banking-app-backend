@@ -9,9 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserInfo {
 	
-	private Long accountNumber;
-	private Double availableBalance;
-	private String accountType;
 	private Long customerId;
 	private String name;
 	private String phoneNumber;
@@ -19,5 +16,6 @@ public class UserInfo {
 	private String email;
 	private String password;
 	private String username;
+	private String token;
 
 }

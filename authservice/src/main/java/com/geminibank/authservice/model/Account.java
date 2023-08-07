@@ -14,6 +14,7 @@ public class Account {
 	private Double availableBalance;
 	private String accountType;
 	private Date accountCreationDate;
+	private Long customerId;
 	
 	public Account(Double availableBalance, String accountType, Date accountCreationDate) {
 		super();

@@ -17,5 +17,7 @@ public class UserCredential {
 	@Id
 	private String username;
 	private String password;
+	private Long customerId;
+	
 	
 }
