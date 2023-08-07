@@ -4,18 +4,6 @@ server:
 spring:
   application:
     name: apigateway
-    
-#  cloud:
-#    gateway:
-#      discovery:
-#        locator:
-#          enabled: true
-#          lower-case-service-id: true
-#      routes:
-#      - id: accountsservice
-#        uri: lb://ACCOUNTSSERVICE
-#        predicates:
-#        - Path=/account/**
         
 eureka:
   client:

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +24,7 @@ import com.geminibank.authservice.service.AuthService;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class AuthController {
 
 	@Autowired
@@ -34,6 +36,7 @@ public class AuthController {
 	private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 
 	@PostMapping("/register")
+	@CrossOrigin(origins = {"http://localhost:3000"})
 	public ResponseEntity<UserInfo> addNewUser(@RequestBody UserInfo userRequest) {
 		UserInfo response = service.registerUser(userRequest);
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
@@ -57,6 +60,7 @@ public class AuthController {
 	}
 
 	@GetMapping("/validate")
+	@CrossOrigin(origins = {"http://localhost:3000"})
 	public void validateToken(@RequestParam(value = "token", required = true) String token) {
 		service.validateToken(token);
 	}

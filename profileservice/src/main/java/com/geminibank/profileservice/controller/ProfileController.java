@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.geminibank.profileservice.service.CustomerService;
 
 @RestController()
 @RequestMapping("/profile")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProfileController {
 	
 private static final Logger log = LoggerFactory.getLogger(ProfileController.class);
@@ -23,6 +25,7 @@ private static final Logger log = LoggerFactory.getLogger(ProfileController.clas
 	private CustomerService service;
 	
 	@PostMapping("/createCustomerProfile")
+	@CrossOrigin(origins = {"http://localhost:3000"})
 	public ResponseEntity<Customer> createCustomerProfile(@RequestBody Customer customerRequest) {
 		Customer response = null;
 		try {
